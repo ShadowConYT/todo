@@ -1,20 +1,27 @@
 const express = require("express");
 const router = express.Router();
 
+const {
+    getAllTodo,
+    addTodo,
+    updateTodo,
+    deleteTodo
+} = require("../controllers/todo")
+
 // get all from the database
-router.get("/")
+router.get("/", getAllTodo);
 
 
 // post a TODO in Database
-router.post("/")
+router.post("/", addTodo);
 
 
 // update a TODO in Database
-router.put("/:id")
+router.put("/:id", updateTodo);
 
 
 // delete a TODO in Database
-router.delete("/:id")
+router.delete("/:id", deleteTodo);
 
 
 
